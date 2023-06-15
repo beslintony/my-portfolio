@@ -58,7 +58,9 @@ const NavBar: React.FC = () => {
             <div className="flex flex-shrink-0 items-center ml-2">
               <a href="#hero">
                 <div className="flex items-center text-fuchsia-600 font-medium">
-                  <div>beslin.tony</div>
+                  <div onClick={toggleMenu}>
+                    beslin.tony
+                  </div>
                 </div>
               </a>
             </div>
