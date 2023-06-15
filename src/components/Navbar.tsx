@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
-const NavBar: React.FC = () => {
-  const [isMenuClosed, setIsMenuClosed] = useState(false);
+type NavbarProps = {
+  isMenuClosed: boolean;
+  setIsMenuClosed: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
+const Navbar: React.FC<NavbarProps> = ({ isMenuClosed, setIsMenuClosed }) => {
   const toggleMenu = () => {
     setIsMenuClosed(!isMenuClosed);
+  };
+
+  const closeMenu = () => {
+    setIsMenuClosed(false);
   };
 
   return (
@@ -58,9 +65,7 @@ const NavBar: React.FC = () => {
             <div className="flex flex-shrink-0 items-center ml-2">
               <a href="#hero">
                 <div className="flex items-center text-fuchsia-600 font-medium">
-                  <div onClick={toggleMenu}>
-                    beslin.tony
-                  </div>
+                  <div onClick={closeMenu}>beslin.tony</div>
                 </div>
               </a>
             </div>
@@ -142,4 +147,4 @@ const NavBar: React.FC = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;

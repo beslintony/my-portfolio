@@ -1,3 +1,5 @@
+import Typewriter from "typewriter-effect";
+
 const Hero = () => (
   <section
     id="hero"
@@ -12,9 +14,17 @@ const Hero = () => (
           </span>
         </span>
       </h1>
-      <h1 className="overflow-hidden whitespace-nowrap font-mono text-xl font-bold animate-typing">
-        A Web Developer.
-      </h1>
+      <Typewriter
+        options={{
+          strings: [
+            '<span class="overflow-hidden whitespace-nowrap font-mono text-2xl font-bold"> I am a Web Developer_</span>',
+            '<span class="overflow-hidden whitespace-nowrap font-mono text-2xl font-bold"> I am a Software Engineer_</span>',
+            '<span class="overflow-hidden whitespace-nowrap font-mono text-2xl font-bold"> I am a Programmer_</span>',
+          ],
+          autoStart: true,
+          loop: true,
+        }}
+      />
       <div className="mt-12 space-x-4">
         <a
           href="#projects"
